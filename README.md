@@ -4,4 +4,3 @@ pip install -r requirements.txt
 
 pip freeze -l
 pip freeze -l > requirements.txt
-
