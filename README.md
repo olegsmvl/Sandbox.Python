@@ -1,6 +1,6 @@
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt 
+- python3 -m venv venv
+- source venv/bin/activate
+- pip install -r requirements.txt 
 
-pip freeze -l
-pip freeze -l > requirements.txt
+- pip freeze -l
+- pip freeze -l > requirements.txt
