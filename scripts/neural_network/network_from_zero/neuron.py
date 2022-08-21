@@ -1,5 +1,3 @@
-# https://proglib.io/p/pishem-neyroset-na-python-s-nulya-2020-10-07
-
 import numpy as np
 
 def sigmoid(x):
@@ -13,11 +11,3 @@ class Neuron:
     def feedforward(self, inputs):
         total = np.dot(self.weights, inputs) + self.bias
         return sigmoid(total)
-
-def main():
-    var = np.zeros([3,3])
-    print(var)
-
-
-if __name__ == "__main__":
-    main()
