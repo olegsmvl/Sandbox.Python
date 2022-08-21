@@ -33,6 +33,7 @@ MarkupSafe==2.1.1
 matplotlib==3.5.3
 matplotlib-inline==0.1.6
 mistune==0.8.4
+mpmath==1.2.1
 nbclient==0.6.6
 nbconvert==6.5.3
 nbformat==5.4.0
@@ -63,6 +64,7 @@ Send2Trash==1.8.0
 six==1.16.0
 soupsieve==2.3.2.post1
 stack-data==0.4.0
+sympy==1.10.1
 terminado==0.15.0
 tinycss2==1.1.1
 torch==1.12.1+cpu
