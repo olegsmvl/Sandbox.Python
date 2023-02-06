@@ -10,3 +10,8 @@ print(d)
 # 2. update
 b.append(5)
 print(b)
+
+# sort
+c = [8,6,2]
+c.sort()
+print(c)
