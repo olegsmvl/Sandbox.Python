@@ -1,2 +1,0 @@
-create text
-new block_buster
