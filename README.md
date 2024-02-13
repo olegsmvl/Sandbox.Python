@@ -1,4 +1,5 @@
-python 3.10
+python 3.8.10
+apt install python3.8-venv
 linux:
 - python3 -m venv venv
 - source venv/bin/activate
