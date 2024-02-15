@@ -5,6 +5,16 @@ def create_file(file_name):
     f.write('create text')
     f.close()
 
+def create_file_and_folder(file_name):
+    dir = os.path.dirname(file_name)
+    if not os.path.exists(dir):
+        # Создаем папку, если она не существует
+        os.makedirs(dir)
+
+    f = open(file_name, 'w')
+    f.write('create text')
+    f.close()
+
 def read_file(file_name):
     f = open(file_name, 'r')
     print(f.read())
@@ -36,5 +46,10 @@ def main():
     replace_text(file_name, 'line', 'block_buster')
     read_file(file_name)
     #remove_file(file_name)
+
+    file_name_recursive = 'dir1/dir2/file.txt'
+    create_file_and_folder(file_name_recursive)
+    file_name_recursive2 = 'dir1/dir2/file2.txt'
+    create_file_and_folder(file_name_recursive2)
 
 main()
