@@ -1,0 +1,9 @@
+look 	7 
+say 	10 
+capacity 	9 
+see 	7 
+tell 	7 
+speak 	7 
+watches
+watch
+cerebral
