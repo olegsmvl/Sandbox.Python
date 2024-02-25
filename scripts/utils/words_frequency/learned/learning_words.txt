@@ -7,3 +7,5 @@ speak 	7
 watches
 watch
 cerebral
+alive 	5 
+deliver 	3 

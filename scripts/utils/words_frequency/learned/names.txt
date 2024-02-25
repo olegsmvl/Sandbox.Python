@@ -4,3 +4,6 @@ pepper 	158
 lucy	
 richard 	11 
 jang 	12 
+ahhh
+del 
+rio
