@@ -9,3 +9,9 @@ watch
 cerebral
 alive 	5 
 deliver 	3 
+give gave given
+get got got
+beings
+afraid 	3 
+habitat
+favorable

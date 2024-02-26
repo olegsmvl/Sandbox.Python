@@ -196,3 +196,22 @@ baby
 stop 	 
 second 	 
 hold 	 
+won 	3 
+plastic 	3 
+powder 	3 
+job 	3 
+yet 	3 
+animal 	3 
+most 	3 
+humans 	3 
+scar 	3 
+able 	3 
+didn 	3 
+welcome 	3 
+hours 	3 
+every 	3 
+gentlemen 	3 
+choose 	3 
+hands 	3 
+stage 	3 
+realize 	3 

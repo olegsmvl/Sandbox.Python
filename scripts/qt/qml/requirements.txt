@@ -1,0 +1,7 @@
+annotated-types==0.6.0
+canlib==1.22.565
+pydantic==2.6.1
+pydantic-core==2.16.2
+PySide6==6.2.4
+shiboken6==6.2.4
+typing-extensions==4.9.0
