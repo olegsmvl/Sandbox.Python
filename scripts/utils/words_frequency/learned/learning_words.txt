@@ -1,17 +1,13 @@
-look 	7 
-say 	10 
-capacity 	9 
-see 	7 
-tell 	7 
-speak 	7 
-watches
-watch
-cerebral
-alive 	5 
-deliver 	3 
+
 give gave given
 get got got
 beings
 afraid 	3 
 habitat
 favorable
+took
+somebody
+trying 	3 
+talking 	3 
+beginning
+unit 	3 
