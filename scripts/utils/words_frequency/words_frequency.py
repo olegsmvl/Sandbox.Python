@@ -1,6 +1,4 @@
-import os
 import re
-import string
 import operator
 
 def learned(filename):
@@ -30,17 +28,21 @@ def exclude_words():
 
 frequency = {}
 #########################
-film_name = 'lucy.txt'
+film_name = 'a_scanner_darkly.txt'
 #########################
 document_text = open(film_name, 'r')
 text_string = document_text.read().lower()
 exclude = exclude_words()
 
 match_pattern = re.findall(r'\b[a-z]{3,15}\b', text_string)
+already_known_words = {}
 for word in match_pattern:
     if not word in exclude:
         count = frequency.get(word,0)
         frequency[word] = count + 1
+    else:
+        count = already_known_words.get(word,0)
+        already_known_words[word] = count + 1
     
 frequency_sorted = dict(sorted(frequency.items(), key=operator.itemgetter(1), reverse=True))
 
@@ -55,5 +57,6 @@ for words in frequency_list:
     f.write(f'{first} \t{second} \n')
     #print (words, frequency_sorted[words])
 
+print(f'already known words: {len(already_known_words)}')
 print(f'new words count: {len(frequency_list)}')
 f.close()

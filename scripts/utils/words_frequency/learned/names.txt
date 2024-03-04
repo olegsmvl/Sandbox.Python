@@ -7,3 +7,5 @@ jang 	12
 ahhh
 del 
 rio
+arctor
+barris
