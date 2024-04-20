@@ -1,12 +1,8 @@
 thisdict = {}
 
-thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
+thisdict = {"brand": "Ford", "model": "Mustang", "year": 1964}
 
-thisdict = dict(name = "John", age = 36, country = "Norway")
+thisdict = dict(name="John", age=36, country="Norway")
 
 thisdict["height"] = 195
 
@@ -22,3 +18,8 @@ text = "Tokenizing text is a core task of NLP."
 tokenized_text = list(text)
 token2idx = {ch: idx for idx, ch in enumerate(sorted(set(tokenized_text)))}
 print(token2idx)
+
+print("============")
+
+for key, value in thisdict.items():
+    print(key, value)
