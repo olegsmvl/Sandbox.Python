@@ -19,7 +19,23 @@ tokenized_text = list(text)
 token2idx = {ch: idx for idx, ch in enumerate(sorted(set(tokenized_text)))}
 print(token2idx)
 
-print("============")
+print("====all=====")
 
 for key, value in thisdict.items():
     print(key, value)
+
+print("====keys=====")
+
+for key in thisdict.keys():
+    print(key)
+
+print("====keys======")
+
+for key in thisdict:
+    print(key)
+
+
+print("====values======")
+
+for value in thisdict.values():
+    print(value)
