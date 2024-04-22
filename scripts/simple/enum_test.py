@@ -23,3 +23,13 @@ s_list = list(s)
 print(s_list[2])
 print(s_list[1])
 print(s_list[0])
+
+print("============")
+
+set_union = set()
+set_union.union(s)
+print(s)
+set_empty = set()
+set_union.union(set_empty)
+print(s)
+set_empty = set()
