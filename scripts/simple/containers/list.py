@@ -11,7 +11,14 @@ print(d)
 b.append(5)
 print(b)
 
-# sort
+# 3. sort
 c = [8,6,2]
 c.sort()
 print(c)
+
+# 4. add list
+print("4 point")
+d = [1,2,3]
+f = [4,5,6]
+f= d + f
+print(f)
