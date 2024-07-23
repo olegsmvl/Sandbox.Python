@@ -22,3 +22,4 @@ d = [1,2,3]
 f = [4,5,6]
 f= d + f
 print(f)
+print(f'len = {len(f)}')
