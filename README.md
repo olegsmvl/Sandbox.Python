@@ -20,3 +20,7 @@ windows:
 Windows PowerShell (VS code)
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 venv\Scripts\Activate.ps1
+
+Projects:
+job_analyze 14_09_24
+scripts/neural_network/data_science/job_analyze.py

@@ -1,38 +1,89 @@
 import pandas as pd
 
 
-# Функция для замены \n\n на <br>
-def replace_newlines(text):
-    return text.replace('\n', '<br>')
+def replace_newlines(text : str):
+    return text.replace("\n", "<br>")
 
 def make_clickable(val):
     return f'<a href="{val}">{val}</a>'
 
-def save_html(df : pd.DataFrame):
-    # Save the DataFrame as an HTML file
+def highlight_word(description : str, word : str, color_num: int) -> str:
+
+    css_colors = [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "gray",
+    "orange",
+    "purple",
+    "pink",
+    "brown",
+    "cyan",
+    "magenta",
+    "lime",
+    "navy"
+    ]
+
+    color_name = css_colors[color_num]
+
+
+    return description.replace(word, f'<span style="background-color: {color_name};">{word}</span>')
+
+def save_html(df: pd.DataFrame, name: str):
+
+
+
     html_output = df.to_html(escape=False)
 
-    # Применение функции ко всем строкам в DataFrame
-    df['Description'] = df['Description'].apply(replace_newlines)
-    df['Detail URL'] = df['Detail URL'].apply(make_clickable)
+    count = df.shape[0]
 
-    # Write the HTML to a file
-    with open('/home/fly/temp/dataframe.html', 'w') as file:
+    filename = f"/home/fly/temp/df_{name}_{count}.html" 
+
+    with open(filename, "w") as file:
         file.write(html_output)
 
-    print("DataFrame saved as HTML page successfully.")
+    
+    print(f"DataFrame saved: {name}. count: {count}")
 
-def filter_df(df: pd.DataFrame, key_word: str):
-    filtered_df = df[df['Description'].str.contains(key_word, case=False, na=False)]
+
+def filter_df(df: pd.DataFrame, common_series: pd.Series, key_word: str):
+    filter_1 = df["Description"].str.contains(key_word, case=False, na=False)
+    filter_2 = df["Title"].str.contains(key_word, case=False, na=False)
+    filter = filter_1 | filter_2 
+    common_series.loc[:] = common_series | filter
+    
+    filtered_df = df[filter]
+    
     return filtered_df
 
+
 def main():
-    df = pd.read_csv('/home/fly/work/job_data/cpp_all_onsite_belgrade_06_08_24.csv')
-    save_html(df)
-    key_words = ["web", "c\+\+", "python", "robotics", "embed"]
-    filtered_df = filter_df(df, "web")
-    save_html(filtered_df)
+    df = pd.read_csv("/home/fly/work/job_data/cpp_all_onsite_belgrade_14_09_24.csv")
+
+    df = df.iloc[:, :6]
+
+    df.loc[:,"Description"] = df["Description"].apply(replace_newlines)
+    df.loc[:,"Detail URL"] = df["Detail URL"].apply(make_clickable)
+
+    key_words = ["c\+\+", "python", "embed", "cloud", "backend", "game", "robotics", "computer vision", "frontend", "front-end", "engineer", "automotive"]
+
+    for color_num, kw in enumerate(key_words):
+        kw = kw.replace("\\", "")
+        df.loc[:,"Description"] = df["Description"].apply(lambda x: highlight_word(x, kw, color_num))
+        df.loc[:,"Description"] = df["Description"].apply(lambda x: highlight_word(x, kw.capitalize(), color_num))
+
+    save_html(df, "all")
+
+    common_series = pd.Series([False] * len(df['Description']))
+
+    for kw in key_words:
+        filtered_df = filter_df(df, common_series, kw)
+        save_html(filtered_df, kw)
+        
+
+    other_df = df[~common_series]
+    save_html(other_df, "other")
 
 if __name__ == "__main__":
     main()
-
