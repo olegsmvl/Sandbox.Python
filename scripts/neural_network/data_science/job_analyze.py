@@ -57,7 +57,7 @@ def filter_df(df: pd.DataFrame, common_series: pd.Series, key_word: str):
     return filtered_df
 
 
-def main(filename : str):
+def main(filename: str):
     df = pd.read_csv(filename)
 
     df = df.iloc[:, :6]
@@ -94,7 +94,7 @@ def main(filename : str):
         "front-end",
         "engineer",
         "automotive",
-        "ROS"
+        "ROS",
     ]
 
     for color_num, kw in enumerate(key_words):
@@ -119,5 +119,5 @@ def main(filename : str):
 
 
 if __name__ == "__main__":
-    filename = "/home/fly/work/job_data/robotics_all_onsite_germany_16_09_24.csv"
+    filename = "/home/fly/work/job_data/cpp_all_onsite_belgrade_02_10_24.csv"
     main(filename)
